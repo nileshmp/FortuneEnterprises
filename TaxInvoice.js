@@ -25,9 +25,16 @@ $(document).ready(function() {
     $('#Print').bind('click', function(event){
 	Print.CreatePrintReceipt();
     });
-    //$(document).bind('keydown', '/', TaxInvoice.addRow());
+
     jQuery(document).bind('keydown', '/', function (evt){
-	alert("Hello Slash"); 
+	TaxInvoice.addRow();
+	evt.stopPropagation( );  
+	evt.preventDefault( );
+	return false;
+    });
+
+    jQuery(document).bind('keydown', 'ctrl+/', function (evt){
+	TaxInvoice.deleteRow();
 	evt.stopPropagation( );  
 	evt.preventDefault( );
 	return false;
