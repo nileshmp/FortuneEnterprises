@@ -2,6 +2,6 @@ var Print =
 {
     CreatePrintReceipt: function()
     {
-	$('div#print-invoice').dialog();
+	$('div#print-invoice').showDialog();
     }
 }

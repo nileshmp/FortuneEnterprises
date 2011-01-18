@@ -5,13 +5,13 @@ $(document).ready(function() {
 
     $(':button[id=add]').bind('click', function(event) {
 	TaxInvoice.addRow();
-	focusOnfirstRow();
+	focusOnRow();
 	
     });
     
     $(':button[id=delete]').bind('click', function(event) {
 	TaxInvoice.deleteRow();
-	focusOnfirstRow();
+	focusOnRow();
     });
     
     setCurrentDate();
@@ -19,29 +19,44 @@ $(document).ready(function() {
     $('#percentage').bind('keypress', function(eve) {
 	applyPercentageToAllRows(eve);
     });
+
     $('#address').autocomplete(null, {matchContains: true}, JSON.parse(outlets, getOutletId), setAddress);
     $('#address').focus();
-    $('#percentage').autocomplete(null, {matchContains: true}, percentages, focusOnfirstRow);
+
+    $('#percentage').autocomplete(null, {matchContains: true}, percentages, focusOnRow);
+
     $('#Print').bind('click', function(event){
 	Print.CreatePrintReceipt();
     });
 
-    jQuery(document).bind('keydown', '/', function (evt){
-	TaxInvoice.addRow();
-	evt.stopPropagation( );  
-	evt.preventDefault( );
-	return false;
-    });
-
-    jQuery(document).bind('keydown', 'ctrl+/', function (evt){
-	TaxInvoice.deleteRow();
-	evt.stopPropagation( );  
-	evt.preventDefault( );
-	return false;
-    });
+    bindToAddRowShortCut(jQuery(document));
+    bindToDeleteRowShortCut(jQuery(document));
+			 
 });
 
-function focusOnfirstRow()
+function bindToAddRowShortCut(element)
+{
+    element.bind('keydown', '/', function (evt){
+	TaxInvoice.addRow();
+	focusOnRow();
+	evt.stopPropagation( );  
+	evt.preventDefault( );
+	return false;
+    });
+}
+
+function bindToDeleteRowShortCut(element)
+{
+    element.bind('keydown', 'ctrl+/', function (evt){
+	TaxInvoice.deleteRow();
+	focusOnRow();
+	evt.stopPropagation( );  
+	evt.preventDefault( );
+	return false;
+    });
+}
+
+function focusOnRow()
 {
     $('#invoice > tbody:last').find('#select_products').focus();
 }
@@ -151,12 +166,16 @@ var TaxInvoice =
 					      '<td width="10%">Pcs</td>' +
 					      '<td width="10%">0.00</td>' +
 					      '</tr>' );
-	    $('input[id=select_products]').autocomplete(null, {matchContains: true}, JSON.parse(JSON.merge(perfumes, giftsets, deos), parseProductNames), populate);		  
+	    $('input[id=select_products]').autocomplete(null, {matchContains: true}, JSON.parse(JSON.merge(perfumes, giftsets, deos), parseProductNames), populate);
+	    bindToAddRowShortCut($(':text'));
+	    bindToDeleteRowShortCut($(':text'));
+
 	},
 
 	deleteRow: function(index)
 	{
 	    $('#invoice tr:last').remove();
+
 	},
 
 
