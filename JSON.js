@@ -79,10 +79,10 @@ var deos = [
 	];
 
 var outlets = [
-    {"id":"Perfume D Paris", "desc":"Perfume D Paris, #1/1, 1st floor, above samsonite, MTK Reddy complex, Rind Road Junction, Marathahalli, B-37"},
-    {"id":"Sugandh Sagar","desc":"Sugandh Sagar, Jayanagar Shopping complex, Bangalore"},
-    {"id":"Our Store", "desc":"Our Store, Bangalore club, Residency road, Bangalore"},
-    {"id":"En vouge","desc":"En vouge, 151/44, 2nd cross, 8th main road, Vasanth Nagar, Bangalore - 560052"}
+    {"id":"Perfume D Paris",  "%":"", "TIN":"", "desc":"Perfume D Paris, #1/1, 1st floor, above samsonite, MTK Reddy complex, Rind Road Junction, Marathahalli, B-37"},
+    {"id":"Sugandh Sagar",  "%":"", "TIN":"", "desc":"Sugandh Sagar, Jayanagar Shopping complex, Bangalore"},
+    {"id":"Our Store",   "%":"", "TIN":"", "desc":"Our Store, Bangalore club, Residency road, Bangalore"},
+    {"id":"En vouge",  "%":"", "TIN":"", "desc":"En vouge, 151/44, 2nd cross, 8th main road, Vasanth Nagar, Bangalore - 560052"}
 ];
 
 var percentages = ["18", "25", "30"];
@@ -116,3 +116,5 @@ var JSON =
 		return JSON.merge(perfumes, giftsets, deos);
 	}
 }
+
+//================End of JSON Utility methods =========================================

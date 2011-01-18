@@ -5,21 +5,24 @@
 	<title> Enterprises Invoice Format</title>
 	<style type="text/css" media="print">.hide{display:none}</style>
 	<script type="text/javascript" src="jquery-1.4.3.js"></script>
+	<script type="text/javascript" src="jquery-1.4.4.min.js"></script>
+	<script type="text/javascript" src="jquery-ui-1.8.8.custom.min.js"></script>
 	<script type="text/javascript" src="jquery.hotkeys-0.7.8.js"></script>
 	<script type='text/javascript' src='jquery.autocomplete.js'></script>
 	<script type='text/javascript' src='Print.js'></script>
-	<script type="text/javascript" src="JSON.js"></script>
 	<script type="text/javascript" src="NumberUtils.js"></script>
+	<script type="text/javascript" src="JSON.js"></script>
 	<script type="text/javascript" src="TaxInvoice.js"></script>
 	<script type="text/javascript" src="Utils.js"></script>
 	<script type="text/javascript" src="KeyCode.js"></script>
-	<script type="text/javascript" src="DialogPopup.js"></script>
 	<link rel="stylesheet" type="text/css" href="jquery.autocomplete.css" />
+	<link rel="stylesheet" type="text/css" href="jquery-ui-1.8.8.custom.css" />
+
 </head>
 
 <body style="margin:0;padding:0">
 <div style="margin:1ex">
-<div>
+<div id="print-invoice">
 <table width="100%" name="header" id="header">
 	<tr valign="bottom">
 	  <td width="100%" align="middle"><font size="4" face="Arial"><h2>Tax Invoice</h2></font></td>
@@ -31,8 +34,14 @@
 
 <h2 align="middle"> Fortune Enterprises</h2>
 <h5 align="middle">  No 5, SOS Post, next to Rose Gardon, Kottnur Dinne Main Road, J P Nagar 8th Phase, BANGALORE--560078</h5>
+
+<table width="100%" class="non-printable" name="address-percentage" id="remove-address-percentage">
+	<tr><td width="8%">Buyer: </td><td><input id="address" type="text" /></td></tr>
+	<tr><td width="8%">Percentage: </td><td><input id="percentage" type="text" maxlength="2" size="2"/></td></tr>
+</table>
+
+
 <table width="100%" name="buyer-address" id="buyer-address" border="1">
-	<tr valign="bottom"><input id="address" type="text" /></tr>
 	<tr valign="top">
 	  <td width="85%">
 	  	<font size="4" face="Arial"><h5 id="set-address">Buyer Name and Address:</h5></font> 
@@ -40,22 +49,21 @@
 	  <td align="middle"><font size="4" face="Arial"><h5 id="date"></h5></font></td>
 	</tr>	
 </table>
-<button id="add" type="button">Add</button>
-<button id="delete" type="button">Delete</button>
-<input id="percentage" type="text" maxlength="2" size="2"/>
+<!--button id="add" type="button">Add</button>
+<button id="delete" type="button">Delete</button-->
 <br/>
 <br/>
 
 <div align="left">
 <table width="100%" name="invoice" id="invoice" border="2" cellspacing="0">
-<tr valign="bottom">
-  <td width="35%"><font size="4" face="Arial">Description Of Goods</font></td>
-  <td width="10%"><font size="4" face="Arial">MRP</font></td>
-  <td width="10%"><font size="4" face="Arial">Billed (Pcs)</font></td>
-  <td width="15%"><font size="4" face="Arial">Quantity Shipped (Pcs)</font></td>
-  <td width="10%"><font size="4" face="Arial">Rate</font></td>
-  <td width="10%"><font size="4" face="Arial">Per</font></td>
-  <td width="10%"><font size="4" face="Arial">Amount</font></td>
+<tr valign="bottom" bgcolor="grey">
+  <td width="35%" align="middle"><font size="4" face="Arial">Description Of Goods</font></td>
+  <td width="10%" align="middle"><font size="4" face="Arial">MRP</font></td>
+  <td width="10%" align="middle"><font size="4" face="Arial">Billed (Pcs)</font></td>
+  <td width="15%" align="middle"><font size="4" face="Arial">Quantity Shipped (Pcs)</font></td>
+  <td width="10%" align="middle"><font size="4" face="Arial">Rate</font></td>
+  <td width="10%" align="middle"><font size="4" face="Arial">Per</font></td>
+  <td width="10%" align="middle"><font size="4" face="Arial">Amount</font></td>
 </tr>
 </table>
 <table width="100%" name="total" id="total" border="2" cellspacing="0">
@@ -86,7 +94,7 @@
 	</tr>
 </table>
 <br/>
-<button id="Print" type="button">PRINT RECEIPT</button>
+<button id="Print" type="button" class="non-printable">PRINT RECEIPT</button>
 </div>
 </div>
 </div>

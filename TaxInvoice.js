@@ -26,11 +26,11 @@ $(document).ready(function() {
     $('#percentage').autocomplete(null, {matchContains: true}, percentages, focusOnRow);
 
     $('#Print').bind('click', function(event){
-	Print.CreatePrintReceipt();
+	Print.CreatePrintPage();
     });
 
-    bindToAddRowShortCut(jQuery(document));
-    bindToDeleteRowShortCut(jQuery(document));
+    //bindToAddRowShortCut(jQuery(document));
+    //bindToDeleteRowShortCut(jQuery(document));
 			 
 });
 
@@ -167,14 +167,19 @@ var TaxInvoice =
 					      '<td width="10%">0.00</td>' +
 					      '</tr>' );
 	    $('input[id=select_products]').autocomplete(null, {matchContains: true}, JSON.parse(JSON.merge(perfumes, giftsets, deos), parseProductNames), populate);
-	    bindToAddRowShortCut($(':text'));
-	    bindToDeleteRowShortCut($(':text'));
+	    bindToAddRowShortCut($('#invoice tr:last :text'));
+	    bindToDeleteRowShortCut($('#invoice tr:last :text'));
 
 	},
 
 	deleteRow: function(index)
 	{
-	    $('#invoice tr:last').remove();
+	    // making sure the header and atleast one row is always present
+	    // on the page......
+	    if($('#invoice tr').length > 2)
+	    {
+		$('#invoice tr:last').remove();
+	    }
 
 	},
 
