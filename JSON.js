@@ -20,6 +20,7 @@ var perfumes = [
 		{"id": 1500, "desc":"Chemystery Eau De Perfume"},
 		{"id": 1000, "desc":"Distraction Eau De Perfume"},
 		{"id": 1800, "desc":"Entice Eau De Perfume"},
+    {"id": 800, "desc":"Expedition Eau de Parfum"},
 		{"id": 800, "desc":"Ignite Eau De Perfume"},
 		{"id": 2000, "desc":"Illusion Eau De Perfume 60ml"},
 		{"id": 1500, "desc":"Khawatri Conc Perfume"},

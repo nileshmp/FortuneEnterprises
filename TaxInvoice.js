@@ -29,9 +29,6 @@ $(document).ready(function() {
 	Print.CreatePrintPage();
     });
 
-    //bindToAddRowShortCut(jQuery(document));
-    //bindToDeleteRowShortCut(jQuery(document));
-			 
 });
 
 function bindToAddRowShortCut(element)
@@ -70,7 +67,9 @@ function setAddress(event)
 {
     addressField = $(event.currentTarget);
     outletId = addressField.val();
-    $("#set-address").text("Buyer Name and Address:  " + getAddress(outletId));
+    td = $("#set-address").parent().parent();
+    td.append('<font size="2" face="Arial">'+getAddress(outletId) +'</font>');
+    td.append('<font size="2" face="Arial">TIN : </font>');
     $('#percentage').focus();
 }
 
