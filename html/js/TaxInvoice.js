@@ -67,21 +67,41 @@ function setAddress(event)
 {
     addressField = $(event.currentTarget);
     outletId = addressField.val();
-    td = $("#set-address").parent().parent();
+    td = $("#set-address");
+    td.find('font').each(
+        function(index){
+            if(index > 0)
+            {
+                $(this).remove();
+            }
+        }
+        
+    );
     td.append('<font size="2" face="Arial">'+getAddress(outletId) +'</font>');
-    td.append('<font size="2" face="Arial">TIN : </font>');
+    td.append('<font face="Arial"><h5>Buyer VAT TIN / Sale Tax No : '+ getTIN(outletId) +'</h5></font>');
     $('#percentage').focus();
 }
 
 function getAddress(id)
 {
     for(i=0; i<outlets.length; i++) {
-	if(outlets[i].id == id)
-	{
-	    return outlets[i].desc;
-	}
+	      if(outlets[i].id == id)
+	      {
+	          return outlets[i].desc;
+	      }
     }
 }
+
+function getTIN(id)
+{
+    for(i=0; i<outlets.length; i++) {
+	      if(outlets[i].id == id)
+	      {
+	          return outlets[i].TIN;
+	      }
+    }
+}
+
 
 function setCurrentDate()
 {
@@ -102,7 +122,7 @@ function populate(event)
     shippedTextBox = $(row).find ('#shipped');
     billedTextBox.focus();
     billedTextBox.bind('keypress', function(eve) {
-	copyValueWithDelay(billedTextBox, shippedTextBox, eve);
+	      copyValueWithDelay(billedTextBox, shippedTextBox, eve);
     });
 }
 

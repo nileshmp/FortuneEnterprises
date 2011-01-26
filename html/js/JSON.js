@@ -80,13 +80,15 @@ var deos = [
 	];
 
 var outlets = [
-    {"id":"Perfume D Paris",  "%":"", "TIN":"", "desc":"Perfume D Paris, #1/1, 1st floor, above samsonite, MTK Reddy complex, Rind Road Junction, Marathahalli, B-37"},
-    {"id":"Sugandh Sagar",  "%":"", "TIN":"", "desc":"Sugandh Sagar, Jayanagar Shopping complex, Bangalore"},
-    {"id":"Our Store",   "%":"", "TIN":"", "desc":"Our Store, Bangalore club, Residency road, Bangalore"},
-    {"id":"En vouge",  "%":"", "TIN":"", "desc":"En vouge, 151/44, 2nd cross, 8th main road, Vasanth Nagar, Bangalore - 560052"}
+    {"id":"Perfume D Paris",  "%":"", "TIN":"29730201322", "desc":"Perfume D Paris, #1/1, 1st floor, above samsonite, MTK Reddy complex, Rind Road Junction, Marathahalli, B-37"},
+    {"id":"Sugandh Sagar",  "%":"", "TIN":"29910132256", "desc":"Sugandh Sagar, Jayanagar Shopping complex, Bangalore"},
+    {"id":"Our Store",   "%":"", "TIN":"29610291100", "desc":"Our Store, Bangalore club, Residency road, Bangalore"},
+    {"id":"The Store",   "%":"", "TIN":"29240878700", "desc":"The Store,F5 Gopalan Arcade, R R Nagar, Mysore Road Bangalore - 98"},
+    {"id":"En vouge",  "%":"", "TIN":"29210460986", "desc":"En vouge, 151/44, 2nd cross, 8th main road, Vasanth Nagar, Bangalore - 560052"},
+    {"id":"Maa Santoshi Agencies",  "%":"", "TIN":"298404466702", "desc":"Maa Santoshi Agencies, 696 Nazarabad Main Road, Mysore - 570010"}
 ];
 
-var percentages = ["18", "25", "30"];
+var percentages = ["18", "20", "30"];
 
 //=========================JSON Utility methods========================================
 
