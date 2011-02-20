@@ -80,5 +80,9 @@ INSERT INTO merchant (NAME, ADDRESS, TIN) values ('Maa Santoshi Agencies','Maa S
 -- insert product_type data ----
 INSERT INTO PRODUCT_TYPE (ID, NAME) VALUES (1001, 'DEO');
 INSERT INTO PRODUCT_TYPE (ID, NAME) VALUES (1002, 'PERFUME');
+INSERT INTO PRODUCT_TYPE (ID, NAME) VALUES (1003, 'GIFT_SET');
+
+-- insert products data -----
+
 
 commit;
