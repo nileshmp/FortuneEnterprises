@@ -21,7 +21,7 @@ tr_type VARCHAR2(10));
 
 CREATE TABLE transaction_details(
 id NUMBER(7) PRIMARY KEY,
-invoice_id NUMBER(7),
+transaction_id NUMBER(7),
 product_id NUMBER(7),
 billed NUMBER(5),
 shipped NUMBER(5),
