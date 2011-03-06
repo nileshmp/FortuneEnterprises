@@ -47,6 +47,8 @@ var perfumes = [
 		{"id": 700, "desc":"Sterra Pour Femme"},
 		{"id": 600, "desc":"Wild Silk Pour Femme"}
 	]
+
+var exp = [{'123_123': "value"}];
 	
 var giftsets = [
 		{"id": 1200, "desc":"Carbon Gift Set"},

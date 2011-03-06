@@ -29,6 +29,7 @@ $(document).ready(function() {
 	Print.CreatePrintPage();
     });
 
+    // alert(exp);
 });
 
 function bindToAddRowShortCut(element)
