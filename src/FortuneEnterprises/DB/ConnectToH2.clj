@@ -8,7 +8,7 @@
   :subprotocol "h2"
   :user        "fortune"
   :password    "fortune"
-  :subname     "tcp://192.168.1.2/~/FE"})
+  :subname     "tcp://192.168.1.2/~/Work/FortuneEnterprises/DB/FE"})
 
 (def merchant (table db :merchant))
 
